@@ -50,9 +50,10 @@
 | company      | int        | null:false          |
 | parking      | int        | null:false          |
 | smorkingroom | int        | null:false          |
-| access       | str        | null:false          |
+| access       | text       | null:false          |
 | babyroom     | int        | null:false          |
 | user         | references | null:false  FK:true |
+| remark       | text       |                     |
   belongs_to: user
   has_many: comment
 
