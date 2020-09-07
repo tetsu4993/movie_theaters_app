@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_28_182439) do
+ActiveRecord::Schema.define(version: 2020_08_29_105432) do
+
+  create_table "theaters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -19,6 +24,8 @@ ActiveRecord::Schema.define(version: 2020_08_28_182439) do
     t.string "nickname", null: false
     t.text "favoriteactor"
     t.text "favoritemovie"
+    t.integer "moviesee"
+    t.integer "pamphlet"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

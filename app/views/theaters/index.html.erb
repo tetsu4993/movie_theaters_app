@@ -1,0 +1,102 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      映画館に行こう
+    </h2>
+    <p class='service-explain'>
+      お気に入りの映画館を探しているあなたへの
+    </p>
+    <p class='service-explain'>
+      ぴったりな耳寄りサイトです
+    </p>
+    <div class='store-btn'>
+      <%#= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
+      <%#= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
+    </div>
+  </div>
+  <%# //画面上部の「人生を変えるフリマアプリ」帯部分  %>
+    <div class='select-reason-contents'>
+    <h2 class='title'>
+      「映画館に行こう」の3つの特徴
+    </h2>
+    <ul class='reason-lists'>
+      <li class='list'>
+        <%= image_tag "1-icon.png", class:"list-pict" %>
+        <span class='reason-list-number'>1</span>
+        <h3 class='reason-list-text'>
+          自分のお気に入りの映画館を登録できる
+        </h3>
+        <p class='reason-list-description'>
+          最大○件登録可能！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "2-icon.png", class:"list-pict" %>
+        <span class='reason-list-number'>2</span>
+        <h3 class='reason-list-text'>
+          マイページでお気に入りの映画情報が詰まったページに！
+        </h3>
+        <p class='reason-list-description'>
+          お気に入りの俳優や映画も編集可能！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "3-icon.png", class:"list-pict" %>
+        <span class='reason-list-number'>3</span>
+        <h3 class='reason-list-text'>
+          他のユーザーが登録した映画館を閲覧・コメントが可能！
+        </h3>
+        <p class='reason-list-description'>
+          みんなで情報を提供しあおう！
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <div class='future-text'>
+    <h2 class='builders-thinks'>
+     なぜ今この時代に映画館なのか
+    </h2>
+    <a href="#", class="builder-omoi">
+    このアプリの製作者の思いを聞いてください。
+    </a>
+  </div>
+  <%# 商品一覧 %>
+  <div class='item-contents'>
+    <h2 class='title'>ピックアップ！</h2>
+    <%= link_to '今熱い映画館', "#", class: "subtitle" %>
+    <div class="theater-list">
+      <%# @theater.each do |theater| %>
+        <%#div class="theater">
+          <div class="thater-image">
+            <%= link_to item_path(item.id) do %>
+              <%#= image_tag theater.image, class:'theater-img' if theater.image.attached? %>
+            <%# end %>
+          <%#/div>
+          <div class="theater-title">
+            <%= theater.title %>
+          <%#/div>
+        </div>
+      <%# end %>
+    </div>
+    <ul class='item-lists'>
+    </ul>
+  </div>
+  <%# //商品一覧 %>
+</div>
+<div class='purchase-btn'>
+  <span class='purchase-btn-text'>新規映画館情報作成ボタン</span>
+  <% if user_signed_in? %>
+    <a href="http://localhost:3000/theaters/new">
+      <%= image_tag 'camera.png', size: '185x50' ,class: "purchase-btn-icon" %>
+    </a>
+  <% else %>
+    <a href="http://localhost:3000/users/sign_in">
+      <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    </a>
+  <% end %>
+</div>
+<%#= render "shared/footer" %>
