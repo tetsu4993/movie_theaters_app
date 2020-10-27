@@ -7,6 +7,9 @@
   flex-direction: column;
   align-items: center;
   padding: 5vh 0;
+  background: linear-gradient(to top, rgb(137, 184, 255), #c5ceff);
+  color: #495193;
+
 }
 
 .item-box {
@@ -50,7 +53,7 @@
 }
 
 
-.item-red-btn {
+.item-red-btn3 {
   text-align: center;
   background-color: #ea352d;
   font-size: 24px;
@@ -64,7 +67,7 @@
   font-size: 20px;
 }
 
-.item-destroy {
+.item-destroy3 {
   background-color: lightgray;
   text-align: center;
   font-size: 24px;

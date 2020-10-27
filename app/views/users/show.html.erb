@@ -1,0 +1,57 @@
+<%= render "shared/header" %>
+
+<div class="contents row">
+  <p><%= @user.nickname %>さんのマイページ</p>
+</div>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @user.nickname %>
+    </h2>
+    <%#div class='item-img-content'>
+      <%= image_tag @t.image, class:'item-box-img'%>
+    <%#/div%>
+
+    <div class="item-explain-box">
+      <span><%= @user.nickname %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">メールアドレス</th>
+          <td class="detail-value"><%= @user.email %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">お気に入りの俳優</th>
+          <td class="detail-value"><%= @user.favoriteactor %></td>
+        </tr>
+                <tr>
+          <th class="detail-item">お気に入りの映画</th>
+          <td class="detail-value"><%= @user.favoritemovie %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">生年月日</th>
+          <td class="detail-value"><%= @user.birthday %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">パンフレット絶対買う？</th>
+          <td class="detail-value"><%= @user.pamphlet.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">映画鑑賞スタイル</th>
+          <td class="detail-value"><%= @user.moviesee.name %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>お気に入り 0</span>
+      </div>
+    </div>
+  </div>
+  <div class="links">
+  </div>
+</div>
+
+<%#= render "shared/footer" %>

@@ -1,12 +1,9 @@
 <div class="items-sell-contents">
-  <%#header class="items-sell-header">
-    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
-    <%# <script src="new.js"></script> %><%#/#header %>
 
   <div class="items-sell-main">
     <h2 class="items-sell-title">新規映画館の情報を入力</h2>
-    <%= form_with model: @item,local: true do |f| %>
-        
+    <%= form_with model: @theater,local: true do |f| %>
+
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
     <%#= render 'shared/error_messages', model: f.object %>
     <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
@@ -21,7 +18,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :hoge, id:"item-image" %>
+        <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
     <%# /出品画像 %>
@@ -31,7 +28,7 @@
         映画館名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :hoge, class:"items-text", id:"item-name", placeholder:"映画館名", maxlength:"40" %>
+      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"映画館名(なるべく正式名称でお願いします。)", maxlength:"40" %>
     </div>
     <%# /商品名と商品説明 %>
 
@@ -40,15 +37,10 @@
       <div class="weight-bold-text">映画館の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
-          カテゴリー
+          配給会社
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="weight-bold-text">
-          商品の状態
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:hoge, [], :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+        <%= f.collection_select(:company_id, Company.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
       </div>
     </div>
     <div class="items-detail">
@@ -59,87 +51,48 @@
           都道府県
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
         <div class="weight-bold-text">
           市町村
-        </div>
-        <%= f.text_area :hoge, class:"items-text", id:"item-name", placeholder:"市町村名（必須 40文字まで)", maxlength:"40" %>
-        <div class="weight-bold-text">
-          配給会社
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+        <%= f.text_area :city, class:"items-text", id:"item-name", placeholder:"市町村名（番地までの記入)", maxlength:"40" %>
         <div class="weight-bold-text">
-          駐車場の有無
+          駐車場はどんな感じ？
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+        <%= f.collection_select(:parking_id, Parking.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+        <div class="weight-bold-text">
+          アクセス
+        </div>
+        <%= f.text_area :access, class:"items-text", id:"item-name", placeholder:"例:)北館2F、エスカレーター上がってすぐ", maxlength:"40" %>
+        <div class="weight-bold-text">
+          喫煙所はどんな感じ？
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:smorkingroom_id, Smorkingroom.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+        <div class="weight-bold-text">
+          ベビールームはどんな感じ？
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:babyroom_id, Babyroom.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+
       </div>
     </div>
     <%# /配送について %>
     <div class="items-explain">
       <div class="weight-bold-text">
         備考
-        <span class="indispensable">必須</span>
+        <span class="indispensable2">任意</span>
       </div>
-      <%= f.text_area :hoge, class:"items-text", id:"item-info", placeholder:"映画館について" ,rows:"7" ,maxlength:"1000" %>
+      <%= f.text_area :remark, class:"items-text", id:"item-info", placeholder:"映画館について" ,rows:"7" ,maxlength:"1000" %>
     </div>
 
 
-    <%# 販売価格 %>
-    <%#div class="sell-price" >
-      <div class="weight-bold-text question-text">
-        <span>販売価格<br>(¥300〜9,999,999)</span>
-        <a class="question" href="#">?</a>
-      </div>
-      <div>
-        <div class="price-content">
-          <div class="price-text">
-            <span>価格</span>
-            <span class="indispensable">必須</span>
-          </div>
-          <span class="sell-yen">¥</span>
-          <%= f.text_field :hoge, class:"price-input", id:"item-price", placeholder:"例）300" %>
-        <%#/div>
-        <%#div class="price-content">
-          <span>販売手数料 (10%)</span>
-          <span>
-            <span id='add-tax-price'></span>円
-          </span>
-        </div>
-        <div class="price-content">
-          <span>販売利益</span>
-          <span>
-            <span id='profit'></span>円
-        </div>
-        </span>
-      </div>
-    </div>
-    <%# /販売価格 %>
-
-    <%# 注意書き %>
-    <div class="caution">
-      <p class="sentence">
-        <a href="#">禁止されている出品、</a>
-        <a href="#">行為</a>
-        を必ずご確認ください。
-      </p>
-      <p class="sentence">
-        またブランド品でシリアルナンバー等がある場合はご記載ください。
-        <a href="#">偽ブランドの販売</a>
-        は犯罪であり処罰される可能性があります。
-      </p>
-      <p class="sentence">
-        また、出品をもちまして
-        <a href="#">加盟店規約</a>
-        に同意したことになります。
-      </p>
-    </div>
-    <%# /注意書き %>
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "出品する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', class:"back-btn" %>
+      <%= f.submit "情報登録する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
@@ -152,7 +105,6 @@
       <li><a href="#">特定商取引に関する表記</a></li>
     </ul>
     <%#= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
-    <%#p class="inc">
     </p>
   </footer>
 </div>

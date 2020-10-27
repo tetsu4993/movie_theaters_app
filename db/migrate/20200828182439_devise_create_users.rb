@@ -10,8 +10,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :nickname,           null: false
       t.text :favoriteactor
       t.text :favoritemovie
-      t.integer :moviesee
-      t.integer :pamphlet
+      t.integer :moviesee_id
+      t.integer :pamphlet_id
 
       ## Recoverable
       t.string   :reset_password_token
