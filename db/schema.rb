@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 2020_09_09_024918) do
     t.string "nickname", null: false
     t.text "favoriteactor"
     t.text "favoritemovie"
-    t.integer "moviesee"
-    t.integer "pamphlet"
+    t.integer "moviesee_id"
+    t.integer "pamphlet_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

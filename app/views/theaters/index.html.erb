@@ -4,7 +4,7 @@
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
-      <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300" rel=stylesheet>
+      <link href="https://fonts.googleapis.com/css?family=Caveat rel="stylesheet">
       For Movie, For Theater, For movie-Fan
     </h2>
     <p class='service-explain'>
@@ -21,12 +21,11 @@
   <%# //画面上部の「人生を変えるフリマアプリ」帯部分  %>
     <div class='select-reason-contents'>
     <h2 class='title'>
-      「映画館に行こう」の3つの特徴
+      「Let's Go To Theater！」の3つのおすすめ機能！
     </h2>
     <ul class='reason-lists'>
       <li class='list'>
-        <%= image_tag "1-icon.png", class:"list-pict" %>
-        <span class='reason-list-number'>1</span>
+        <%= image_tag "sozai１.png", class:"list-pict" %>
         <h3 class='reason-list-text'>
           自分のお気に入りの映画館を登録できる
         </h3>
@@ -35,8 +34,7 @@
         </p>
       </li>
       <li class='list'>
-        <%= image_tag "2-icon.png", class:"list-pict" %>
-        <span class='reason-list-number'>2</span>
+        <%= image_tag "sozai２.png", class:"list-pict" %>
         <h3 class='reason-list-text'>
           マイページでお気に入りの映画情報が詰まったページに！
         </h3>
@@ -45,8 +43,7 @@
         </p>
       </li>
       <li class='list'>
-        <%= image_tag "3-icon.png", class:"list-pict" %>
-        <span class='reason-list-number'>3</span>
+        <%= image_tag "sozai３.png", class:"list-pict" %>
         <h3 class='reason-list-text'>
           他のユーザーが登録した映画館を閲覧・コメントが可能！
         </h3>
@@ -67,21 +64,21 @@
   </div>
   <%# 商品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>ピックアップ！</h2>
-    <%= link_to '今熱い映画館', "#", class: "subtitle" %>
-    <div class="theater-list">
-      <%# @theater.each do |theater| %>
-        <%#div class="theater">
-          <div class="thater-image">
-            <%= link_to item_path(item.id) do %>
-              <%#= image_tag theater.image, class:'theater-img' if theater.image.attached? %>
-            <%# end %>
-          <%#/div>
+    <h2 class='title'>最近更新された映画館</h2>
+    <%#= link_to '今熱い映画館', "#", class: "subtitle" %>
+    <div class="item-list">
+      <% @theater.each do | theater | %>
+        <div class="item">
+          <div class="item-image">
+            <%= link_to theater_path(theater.id) do %>
+              <%= image_tag theater.image, class:'item-img' if theater.image.attached? %>
+            <% end %>
+          </div>
           <div class="theater-title">
-            <%= theater.title %>
-          <%#/div>
+            <%= theater.name %>
+          </div>
         </div>
-      <%# end %>
+      <% end %>
     </div>
     <ul class='item-lists'>
     </ul>

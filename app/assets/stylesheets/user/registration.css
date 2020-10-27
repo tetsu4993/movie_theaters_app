@@ -5,6 +5,9 @@
   background-color: black;
   display: flex;
   justify-content: center;
+  background: linear-gradient(to top, rgb(137, 184, 255), #c5ceff);
+  color: #495193;
+
 }
 
 .registration-main2 {
@@ -14,6 +17,9 @@
   background-color: white;
   display: flex;
   justify-content: center;
+  background: linear-gradient(to top, rgb(137, 184, 255), #c5ceff);
+  color: #495193;
+
 }
 
 /* form-wrapは商品購入画面でも使用しています */
@@ -21,6 +27,9 @@
   width: 50%;
   background-color:black;
   padding-bottom: 70px;
+  background: linear-gradient(to top, rgb(137, 184, 255), #c5ceff);
+  color: #495193;
+
 }
 
 .form-header {
@@ -34,7 +43,8 @@
   font-size: 70px;
   line-height: 100px;
   font-weight: bold;
-  color: #ea352d;
+  color:black;
+  font-family: "Tsukushi B Round Gothic","筑紫B丸ゴシック";
 }
 
 .form-group {
