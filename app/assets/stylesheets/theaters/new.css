@@ -2,13 +2,15 @@
 
 
 .items-sell-contents {
-  background-color: #f5f5f5;
+  background-color:#f8f8f8;
   font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
   font-size: 14px;
   display: flex;
   align-items: center;
   flex-direction: column;
   min-width: 500px;
+  background: linear-gradient(to top, rgb(137, 184, 255), #c5ceff);
+  color: #495193;
 }
 
 .items-sell-header {

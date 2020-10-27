@@ -5,4 +5,4 @@ class Moviesee < ActiveHash::Base
     { id: 3, name: '多人数で？' },
     { id: 4, name: 'その他' }
   ]
-  end
+end

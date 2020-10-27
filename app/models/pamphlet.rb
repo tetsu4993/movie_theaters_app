@@ -5,4 +5,4 @@ class Pamphlet < ActiveHash::Base
     { id: 3, name: '場合によっては・・・' },
     { id: 4, name: '買わない' },
   ]
-  end
+end

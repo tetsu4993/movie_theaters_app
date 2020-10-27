@@ -22,6 +22,8 @@ class TheatersController < ApplicationController
 
   def show
     @theater = Theater.find(params[:id])
+    @comment = Comment.new
+    @comments = @theater.comments.includes(:user)
   end
 
   private

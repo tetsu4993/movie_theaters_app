@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 
-<div class="contents row">
+<div class="contents-row">
   <p><%= @user.nickname %>さんのマイページ</p>
 </div>
 <div class="item-show">
@@ -35,11 +35,11 @@
         </tr>
         <tr>
           <th class="detail-item">パンフレット絶対買う？</th>
-          <td class="detail-value"><%= @user.pamphlet.name %></td>
+          <td class="detail-value"><%= @user.pamphlet %></td>
         </tr>
         <tr>
           <th class="detail-item">映画鑑賞スタイル</th>
-          <td class="detail-value"><%= @user.moviesee.name %></td>
+          <td class="detail-value"><%= @user.moviesee %></td>
         </tr>
       </tbody>
     </table>

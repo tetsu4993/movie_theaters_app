@@ -60,14 +60,14 @@
       <label :favoritemovie, class="form-text">映画鑑賞スタイル</label>
       <span class="indispensable2">任意</span>
     </div>
-    <%= f.collection_select(:moviesee_id, Moviesee.all, :id, :name, {}, {class:"select-box", id:"moviesee"}) %>
+    <%= f.collection_select(:moviesee_id, Moviesee.all, :id, :name, {}, {class:"select-box", id:"moviesee_id"}) %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label :favoritemovie, class="form-text">パンフレット絶対買う？</label>
       <span class="indispensable2">任意</span>
     </div>
-    <%= f.collection_select(:pamphlet_id, Pamphlet.all, :id, :name, {}, {class:"select-box", id:"pamphlet"}) %>
+    <%= f.collection_select(:pamphlet_id, Pamphlet.all, :id, :name, {}, {class:"select-box", id:"pamphlet_id"}) %>
   </div>
 
 

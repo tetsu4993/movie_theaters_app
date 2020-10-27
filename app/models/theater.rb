@@ -1,6 +1,6 @@
 class Theater < ApplicationRecord
   belongs_to :user
-  has_many :comment
+  has_many :comments
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
