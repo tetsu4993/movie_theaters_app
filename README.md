@@ -1,13 +1,13 @@
 # README
 
 # アプリケーション名
- 映画館に行こう
+ Lets Go To Theater!
 
 # アプリケーション概要
  映画館を検索したりコメントしたり、マイページで自分の映画館情報や映画情報などを閲覧・編集したりするようにできます。
 
 # デプロイURL
- https://movie-theaters-app.herokuapp.com/
+ https://movietheaters-app.herokuapp.com/
 # テスト用アカウント
  e-mail:tetsu19901103@gmail.com
  Pass:zaq1234
@@ -67,4 +67,4 @@
   belongs_to: theater
 
 # ローカルでの動作方法
- ruby2.6.5で作成しているので、ターミナルで source ~/.bash_profile で2.6.5に変更してrails sでサーバーを起動させます。ベーシックん認証は未導入なのでそこからはトップページに遷移し、各機能を使うことができます。
+ ruby2.6.5で作成しているので、ターミナルで source ~/.bash_profile で2.6.5に変更してrails sでサーバーを起動させます。ベーシック認証は未導入なのでそこからはトップページに遷移し、各機能を使うことができます。
